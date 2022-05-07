@@ -5,14 +5,18 @@ using UnityEngine.Events;
 public class UnitSelecter : MonoBehaviour
 {
     public static event UnityAction<Unit> selected;
+    public static event UnityAction<Unit> currentUpdated;
     private int g;
     [SerializeField] private Unit[] units;
     private int index=0;
     Unit currentUnit;
+
+    public Unit CurrentUnit { get => currentUnit; set { currentUnit = value;currentUpdated.Invoke(currentUnit); } }
+
     // Start is called before the first frame update
     void Start()
     {
-        currentUnit = units[index];
+        CurrentUnit = units[index];
     }
 
     public void RightPress() {
@@ -21,7 +25,7 @@ public class UnitSelecter : MonoBehaviour
             index = 0;
         }
 
-        currentUnit = units[index];
+        CurrentUnit = units[index];
     }
 
     public void LeftPress() {
@@ -31,11 +35,11 @@ public class UnitSelecter : MonoBehaviour
             index = 2;
         }
 
-        currentUnit = units[index];
+        CurrentUnit = units[index];
     }
 
     public void SelectUnit() {
 
-        selected.Invoke(currentUnit);
+        selected.Invoke(CurrentUnit);
     }
 }

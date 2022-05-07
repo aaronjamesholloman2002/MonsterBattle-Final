@@ -9,4 +9,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MasterScene");
     }
+
+    public void OnMaster() {
+
+        SceneManager.LoadScene("BattleScene");
+    }
 }
