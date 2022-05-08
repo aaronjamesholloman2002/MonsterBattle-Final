@@ -21,7 +21,7 @@ public class UnitSelecter : MonoBehaviour
 
     public void RightPress() {
         index++;
-        if(index > 2) {
+        if(index > units.Length-1) {
             index = 0;
         }
 
@@ -32,7 +32,7 @@ public class UnitSelecter : MonoBehaviour
 
         index--;
         if (index < 0) {
-            index = 2;
+            index = units.Length-1;
         }
 
         CurrentUnit = units[index];
