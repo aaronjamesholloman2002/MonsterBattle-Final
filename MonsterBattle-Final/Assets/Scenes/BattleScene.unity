@@ -741,7 +741,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   blast: {fileID: 1334388501071585672, guid: a1d915ae68f686c47bcc553572e63454, type: 3}
+=======
+>>>>>>> parent of fca4fca (Final Commit)
 =======
 >>>>>>> parent of fca4fca (Final Commit)
   unit: {fileID: -6859363972879237212, guid: 8d08bcaedfa77dc4491b3295332a9c1b, type: 3}
@@ -2215,6 +2218,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &716943363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2312,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716943363}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of fca4fca (Final Commit)
 =======
 >>>>>>> parent of fca4fca (Final Commit)
 --- !u!1 &722297325
@@ -3654,6 +3660,7 @@ BoxCollider2D:
   m_Size: {x: 274.97366, y: 132.37523}
   m_EdgeRadius: 5.02
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1278504501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,6 +3755,8 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 =======
 >>>>>>> b170e2895ef7451add1851e2bed1e2f9c7473378
+=======
+>>>>>>> parent of fca4fca (Final Commit)
 =======
 >>>>>>> parent of fca4fca (Final Commit)
 --- !u!1 &1297582238

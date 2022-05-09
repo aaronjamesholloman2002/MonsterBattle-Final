@@ -60,3 +60,4 @@ crashlytics-build.properties
 
 MonsterBattle-Final/UserSettings/EditorUserSettings.asset
 MonsterBattle-Final/UserSettings/EditorUserSettings.asset
+*.unity
