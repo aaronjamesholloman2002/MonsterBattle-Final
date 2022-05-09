@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     PlayerMon player;
@@ -10,6 +11,13 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private GameObject gatherMode;
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject buttonMenu;
+    [SerializeField] public Slider playerHP;
+    [SerializeField] public Slider bossHP;
+    [SerializeField] public int playerDMG;
+    [SerializeField] public GameObject playerModel;
+    [SerializeField] public int enemyDMG;
+    [SerializeField] public GameObject enemyModel;
+
 
     bool playerAttacked;
     bool enemyAttacked;
@@ -68,10 +76,13 @@ public class BattleManager : MonoBehaviour
         }
     }
     void EnemyDamage() {
-        boss.unit.Health -= Mathf.Clamp(boss.unit.Defense - player.Unit.Attack, 1, 999999);
+        //bossHP.value -= Mathf.Clamp(boss.unit.Defense - player.Unit.Attack, 1, 999999);
+        EnemyMn enemyMn = enemyModel.GetComponent<EnemyMn>();
+        Boss bossStats = enemyMn.GetComponent<Boss>();
+        bossHP.value -= 50;
     }
     void PlayerDamage() {
-        player.Unit.Health -= Mathf.Clamp(player.Unit.Defense - boss.unit.Attack, 1, 999999);
+        playerHP.value -= Mathf.Clamp(player.Unit.Defense - boss.unit.Attack, 1, 999999);
     }
     public void Attack() {
 

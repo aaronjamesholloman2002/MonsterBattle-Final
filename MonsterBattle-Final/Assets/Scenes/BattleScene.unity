@@ -632,6 +632,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gatherMode: {fileID: 1336619594}
   timer: {fileID: 1278504501}
+  buttonMenu: {fileID: 778788167}
+  playerHP: {fileID: 113433301}
+  bossHP: {fileID: 247082948}
+  playerDMG: 0
+  playerModel: {fileID: 1627645251}
+  enemyDMG: 0
+  enemyModel: {fileID: 168450684}
 --- !u!4 &126264200
 Transform:
   m_ObjectHideFlags: 0
@@ -4077,6 +4084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80180dfd28deebf4b9d603a24131df02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 21
 --- !u!114 &1278504504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5015,6 +5023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1379633023470848462}
   blast: {fileID: 1334388501071585672, guid: f1b76cba18aa39348bfb7399e660bf20, type: 3}
+  storedUnit: {fileID: 0}
 --- !u!1 &1648517561
 GameObject:
   m_ObjectHideFlags: 0

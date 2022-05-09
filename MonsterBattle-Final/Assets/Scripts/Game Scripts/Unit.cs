@@ -6,10 +6,10 @@ public class Unit :MonoBehaviour
 {
     public enum Types {Blue,Red,Green,Purple }
     [SerializeField] Types type;
-    [SerializeField]private int health;
-    [SerializeField]private int attack;
-    [SerializeField]private int defense;
-    [SerializeField] private int speed;
+    [SerializeField] public int health;
+    [SerializeField] public int attack;
+    [SerializeField] public int defense;
+    [SerializeField] public int speed;
     private int att;
     private int def;
     private int sped;

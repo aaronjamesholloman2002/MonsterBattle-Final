@@ -11,6 +11,7 @@ public class PlayerMon : MonoBehaviour
     private int defBoost;
     private int spdBoost;
     Unit unit = new Unit();
+    public Unit storedUnit;
 
     public Unit Unit { get => unit; set { unit = value; OnUnitSet(); } }
     public static PlayerMon GetPlayer() => instance;
@@ -25,6 +26,7 @@ public class PlayerMon : MonoBehaviour
     }
     void Start()
     {
+        storedUnit = unit;
         Unit.Start();
     }
     void OnUnitSet() {
