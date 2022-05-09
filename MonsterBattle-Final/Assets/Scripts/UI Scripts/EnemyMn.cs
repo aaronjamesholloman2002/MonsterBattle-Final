@@ -6,7 +6,7 @@ public class EnemyMn : MonoBehaviour
 {
     private static EnemyMn instance;
     public static EnemyMn GetBoss() => instance;
-    [SerializeField] private GameObject blast;
+
     Image image;
     public Unit unit;
 
@@ -22,13 +22,10 @@ public class EnemyMn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        unit.Start();
         image=GetComponent<Image>();
         image.sprite = unit.UnitSprite;
     }
-    public void Attack() {
-        Instantiate(blast,transform.position,Quaternion.identity);
-    }
+
     //at the beginning of battle phase has to set when itll attack
     //random select number of attacks, then have a loop to get a random number for each number of attacks, then send to battle manager
     //numOfAttacks=RandomNum();

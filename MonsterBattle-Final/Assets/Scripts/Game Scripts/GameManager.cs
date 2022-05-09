@@ -39,7 +39,4 @@ public class GameManager : MonoBehaviour
             player.Unit = playerUnit;
         }
     }
-    public static void LoadScene(int level) {
-        SceneManager.LoadScene(level);
-    }
 }
