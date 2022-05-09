@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  health: 180
-  attack: 3
-  defense: 5
-  speed: 1
+  health: 0
+  attack: 0
+  defense: 0
   unitSprite: {fileID: 21300000, guid: f9a60b90a6c0d6a4f86694a503171704, type: 3}

@@ -9,6 +9,10 @@ public class DestroyBox : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other) {
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision) {
 
             Debug.Log("Object entered");

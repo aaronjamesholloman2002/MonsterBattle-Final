@@ -7,17 +7,15 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private Text text;
-    [SerializeField]Unit unit;
     // Start is called before the first frame update
     void Start()
     {
-        slider.maxValue = PlayerMon.GetPlayer().Unit.Health;
-        Blast.enemydmg += HealthCond;
+        Player.sendhp += HealthCond;
     }
 
-    private void HealthCond() {
+    private void HealthCond(int value) {
         print("set");
-        
-        slider.value = PlayerMon.GetPlayer().Unit.Health;
+        slider.maxValue = value;
+        slider.value = value;
     }
 }

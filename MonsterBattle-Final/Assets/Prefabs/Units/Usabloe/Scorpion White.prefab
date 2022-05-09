@@ -47,6 +47,5 @@ MonoBehaviour:
   health: 150
   attack: 6
   defense: 6
-  speed: 6
   unitSprite: {fileID: 21300000, guid: 3408ca7ca5a2e4e43ad819170cdff141, type: 3}
   bossLevel: 15
