@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] private GameObject gatherMode;
     [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject buttonMenu;
 
     bool playerAttacked;
     bool enemyAttacked;
@@ -32,6 +33,7 @@ public class BattleManager : MonoBehaviour
         enemyAttacked = false;
         gatherMode.SetActive(true);
         timer.SetActive(true);
+        buttonMenu.SetActive(false);
         resetTimer.Invoke();
         StartCoroutine(waitTilBattlePhase());
     }
@@ -40,6 +42,7 @@ public class BattleManager : MonoBehaviour
         print("Start Attack phase");
         gatherMode.SetActive(false);
         timer.SetActive(false);
+        buttonMenu.SetActive(true);
         if (player.Unit.Speed > boss.unit.Speed) {
             StartCoroutine(playerAttack(3));
             StartCoroutine(enemyAttack(8));

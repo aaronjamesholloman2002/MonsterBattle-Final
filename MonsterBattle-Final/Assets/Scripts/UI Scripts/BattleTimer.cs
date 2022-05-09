@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BattleTimer : MonoBehaviour
 {
     Text text;
-    int time;
+    public int time = 21;
     Coroutine timer;
     // Start is called before the first frame update
     void Start() {
@@ -13,7 +13,7 @@ public class BattleTimer : MonoBehaviour
         BattleManager.resetTimer += SetTime;
     }
     void SetTime() {
-        time = 21;
+        //time = 21;
         text.text = "Battle Timer: " + time.ToString();
         if (time > 0) {
             timer = StartCoroutine(TickTimer());
