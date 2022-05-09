@@ -8,7 +8,7 @@ public class PlayerMon : MonoBehaviour
     [SerializeField]private Image image;
     Unit unit = new Unit();
 
-    public Unit Unit { get => unit; set { unit = value; oNuNITsET(); } }
+    public Unit Unit { get => unit; set { unit = value; OnUnitSet(); } }
     public static PlayerMon GetPlayer() => instance;
     private void Awake() {
         if (instance != null && instance != this) {
@@ -23,10 +23,13 @@ public class PlayerMon : MonoBehaviour
     {
         
     }
-    void oNuNITsET() {
+    void OnUnitSet() {
         //StartCoroutine(WaitForSet());
         image.sprite = 
             Unit.UnitSprite;
+    }
+    public void Attack() { 
+        
     }
     IEnumerator WaitForSet() { 
     yield return null;
