@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SelectorCanvas : MonoBehaviour
 {
     [SerializeField]Image image;
+    [SerializeField]Unit unit;
     // Start is called before the first frame update
     void Start()
     {

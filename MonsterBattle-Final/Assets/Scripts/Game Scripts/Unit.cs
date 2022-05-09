@@ -13,7 +13,7 @@ public class Unit :MonoBehaviour
     private int att;
     private int def;
     private int sped;
-    [SerializeField] private Sprite unitSprite;
+    [SerializeField] public Sprite unitSprite;
     public int Health { get => health; set { Debug.Log(value); health = value; } }
     public Sprite UnitSprite { get => unitSprite; set => unitSprite = value; }
     public int Attack { get => att; set { Debug.Log(value); att = value; } }

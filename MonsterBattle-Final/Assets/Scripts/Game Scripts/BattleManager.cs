@@ -30,6 +30,12 @@ public class BattleManager : MonoBehaviour
         Blast.enemydmg += EnemyDamage;
         //Send begin text
         StartCoroutine(waitTilGatherPhase());
+        //Get unit stats
+        EnemyMn enemyMn = enemyModel.GetComponent<EnemyMn>();
+        Boss bossStats = enemyMn.GetComponent<Boss>();
+        PlayerMon playerMon = enemyModel.GetComponent<PlayerMon>();
+        //Boss bossStats = enemyMn.GetComponent<Boss>();
+
     }
     void OnBattle() { //has to run like command phases
                       //has to take in
@@ -64,10 +70,10 @@ public class BattleManager : MonoBehaviour
     //determine whether to repeat or switch to win state or
     //lose
     void Repeat() {
-        if (player.Unit.Health <= 0) {
+        if (playerHP.value <= 0) {
             GameManager.LoadScene(3);
         }
-        else if (boss.unit.Health <= 0) {
+        else if (bossHP.value <= 0) {
             GameManager.LoadScene(4);
         }
         else {

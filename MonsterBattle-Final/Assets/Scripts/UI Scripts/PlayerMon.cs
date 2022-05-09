@@ -26,7 +26,15 @@ public class PlayerMon : MonoBehaviour
     }
     void Start()
     {
-        storedUnit = unit;
+        for (int i = GameObject.Find("/Units").transform.childCount; i > 0; i--)
+        {
+            Transform child = GameObject.Find("/Units").transform.GetChild(i);
+            if (image.sprite == child.GetComponent<Unit>().unitSprite)
+            {
+                storedUnit = child.GetComponent<Unit>();
+                break;
+            }
+        }
         Unit.Start();
     }
     void OnUnitSet() {
