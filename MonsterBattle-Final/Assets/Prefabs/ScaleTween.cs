@@ -6,28 +6,28 @@ public class ScaleTween : MonoBehaviour
 {
     public GameObject Defender;
     public float delay = 0f;
-    private float defPos = 500f;
+    private float defPos = 0f;
     public bool isPlayerAttacker = true;
-	
+
+    // Start is called before the first frame update
     void OnEnable()
     {
+        /*defPos = Defender.GetComponent<RectTransform>().anchoredPosition.x;
+        if (isPlayerAttacker == true)
+        {
+            gameObject.GetComponent<ScaleTween>().Defender = enemy;
+        }
+        else
+        {
+            gameObject.GetComponent<ScaleTween>().Defender = player;
+        }*/
+
         Move();
     }
 
     void Move()
     {
-		transform.SetSiblingIndex(0);
-		isPlayerAttacker = true;
-		if (isPlayerAttacker)
-		{
-			LeanTween.moveX(gameObject.GetComponent<RectTransform>(), 300f, 0.0f);
-			LeanTween.moveX(gameObject.GetComponent<RectTransform>(), defPos, 0.3f).setDelay(delay).setOnComplete(Explode);
-		}
-		else
-		{
-			LeanTween.moveX(gameObject.GetComponent<RectTransform>(), 500f, 0.0f);
-			LeanTween.moveX(gameObject.GetComponent<RectTransform>(), 300f, 0.3f).setDelay(delay).setOnComplete(Explode);
-		}
+        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), defPos, 0.3f).setDelay(delay).setOnComplete(Explode);
     }
 
     void Explode()

@@ -44,10 +44,8 @@ public class ButtonMenuScript : MonoBehaviour
 
     public void Atk1()
     {
-        GameObject bulletInstance = Instantiate(Bullet/*, new Vector3(0,0,0), new Quaternion(0,0,0,0)*/);
-        bulletInstance.transform.SetParent(GameObject.Find("Canvas").transform,true);
-		bulletInstance.transform.position = (GameObject.Find("Canvas").transform.position) + new Vector3(-100,-50,0);
-		
+        GameObject bulletInstance = Instantiate(Bullet);
+        bulletInstance.transform.SetParent(GameObject.Find("ObjectPoolingManager").transform,true);
     }
 
     public void Atk2()

@@ -11,6 +11,7 @@ public class Boss : Unit
         Health *= bossLevel;
         Attack *= bossLevel;
         Defense *= bossLevel;
+        Speed *= bossLevel;
     }
 
 }

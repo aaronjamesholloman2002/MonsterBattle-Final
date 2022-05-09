@@ -10,7 +10,6 @@ public class UnitSelecter : MonoBehaviour
     [SerializeField] private Unit[] units;
     private int index=0;
     Unit currentUnit;
-	public int numUnits = 3;
 
     public Unit CurrentUnit { get => currentUnit; set { currentUnit = value;currentUpdated.Invoke(currentUnit); } }
 
@@ -22,7 +21,7 @@ public class UnitSelecter : MonoBehaviour
 
     public void RightPress() {
         index++;
-        if(index > (numUnits-1)) {
+        if(index > units.Length-1) {
             index = 0;
         }
 
@@ -33,7 +32,7 @@ public class UnitSelecter : MonoBehaviour
 
         index--;
         if (index < 0) {
-            index = (numUnits-1);
+            index = units.Length-1;
         }
 
         CurrentUnit = units[index];
