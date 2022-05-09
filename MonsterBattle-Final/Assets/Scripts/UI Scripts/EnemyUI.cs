@@ -10,6 +10,7 @@ public class EnemyUI : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         slider.maxValue = EnemyMn.GetBoss().unit.Health;
+        slider.value = EnemyMn.GetBoss().unit.Health;
         Blast.playerdmg += HealthCond;
     }
 

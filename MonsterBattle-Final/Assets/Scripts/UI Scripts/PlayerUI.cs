@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         slider.maxValue = PlayerMon.GetPlayer().Unit.Health;
+        slider.value = PlayerMon.GetPlayer().Unit.Health;
         Blast.enemydmg += HealthCond;
     }
 
