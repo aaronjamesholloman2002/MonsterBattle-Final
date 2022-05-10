@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 39147b6d3064df44db150ab29b280126
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Win Scene.unity
     guid: 59bc3d04331562a4b97ca226e48880f6
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 091af4a19bd3b7e479c50d16361a0aa5
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 0927f2fa92ec8b64b9d1d0006fe19f7a
   m_configObjects: {}

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UnitSelecter.selected+=SetUnit;
+        //UnitSelecter.selected+=SetUnit;
         print("ummm");
         unit.Health = 9;
         //sendhp.Invoke(unit.Health);

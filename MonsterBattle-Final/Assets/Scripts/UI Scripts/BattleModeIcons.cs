@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 public class BattleModeIcons : MonoBehaviour
 {
-    public enum PowerUpType {AttackUp,DefenseUp,SpeedUp,Bonus }
+    public static event UnityAction statsUp;
+    public enum PowerUpType { AttackUp, DefenseUp, HealthUp, Bonus }
     [SerializeField] PowerUpType type;
     [SerializeField] int powerUp;
     [SerializeField] Vector2 direction;
@@ -15,8 +17,7 @@ public class BattleModeIcons : MonoBehaviour
     Rigidbody2D rbody;
 
     // Start is called before the first frame update
-    public void Start()
-    {
+    public void Start() {
         print("SPawned");
         player = PlayerMon.GetPlayer();
         button = GetComponent<Button>();
@@ -24,7 +25,7 @@ public class BattleModeIcons : MonoBehaviour
         //button.onClick.AddListener(AddPowerUp);
     }
     private void Update() {
-        rbody.MovePosition(rbody.position +(direction*speed));
+        rbody.MovePosition(rbody.position + (direction * speed));
     }
     public void AddPowerUp() {
         print("Clicked");
@@ -35,15 +36,18 @@ public class BattleModeIcons : MonoBehaviour
             case PowerUpType.DefenseUp:
                 player.Unit.Defense += powerUp;
                 break;
-            case PowerUpType.SpeedUp:
-                player.Unit.Speed += powerUp;
+            case PowerUpType.HealthUp:
+                if (player.Unit.Health < 100) { 
+                player.Unit.Health += powerUp;
+                }
                 break;
             case PowerUpType.Bonus:
                 player.Unit.Attack += powerUp;
                 player.Unit.Defense += powerUp;
                 break;
         }
-        Instantiate(effect,transform.position,Quaternion.identity);
+        statsUp.Invoke();
+        //Instantiate(effect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

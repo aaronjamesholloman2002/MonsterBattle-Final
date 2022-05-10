@@ -4,24 +4,22 @@ using UnityEngine;
 using UnityEngine.Events;
 public class UnitSelecter : MonoBehaviour
 {
-    public static event UnityAction<Unit> selected;
+    public static event UnityAction<GameObject> selected;
     public static event UnityAction<Unit> currentUpdated;
-    private int g;
-    [SerializeField] private Unit[] units;
-    private int index=0;
-    Unit currentUnit;
+    [SerializeField] private GameObject[] units;
+    private int index = 0;
+    GameObject currentUnit;
 
-    public Unit CurrentUnit { get => currentUnit; set { currentUnit = value;currentUpdated.Invoke(currentUnit); } }
+    public GameObject CurrentUnit { get => currentUnit; set { currentUnit = value; currentUpdated.Invoke(currentUnit.GetComponent<Unit>()); } }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         CurrentUnit = units[index];
     }
 
     public void RightPress() {
         index++;
-        if(index > units.Length-1) {
+        if (index > units.Length - 1) {
             index = 0;
         }
 
@@ -32,7 +30,7 @@ public class UnitSelecter : MonoBehaviour
 
         index--;
         if (index < 0) {
-            index = units.Length-1;
+            index = units.Length - 1;
         }
 
         CurrentUnit = units[index];

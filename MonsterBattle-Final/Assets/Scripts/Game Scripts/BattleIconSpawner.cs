@@ -14,7 +14,7 @@ public class BattleIconSpawner : MonoBehaviour
         StopCoroutine(spawn);
     }
     void Start() {
-        
+
     }
     IEnumerator WaitToSpawn() {
         YieldInstruction wait = new WaitForSeconds(1f);

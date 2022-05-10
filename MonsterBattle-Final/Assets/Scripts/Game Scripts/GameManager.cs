@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //[Header("Monsters")]
-    public PlayerMon player;
+    private PlayerMon player;
     //public GameObject Enemy;
     //[Header("UI")]
     //public GameObject PlayerHP;
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     //public GameObject Dialogue;
     //[Header("Attacks")]
     //public GameObject Bullet;
-    Unit playerUnit;
+    GameObject playerUnit;
     // Start is called before the first frame update
     private void OnEnable() {
         SceneManager.sceneLoaded += OnFinshiedLoading;
@@ -24,19 +24,18 @@ public class GameManager : MonoBehaviour
     private void OnDisable() {
         SceneManager.sceneLoaded -= OnFinshiedLoading;
     }
-    void Start()
-    {
+    void Start() {
         UnitSelecter.selected += SetUnit;
         DontDestroyOnLoad(this);
     }
 
-    private void SetUnit(Unit unit) {
+    private void SetUnit(GameObject unit) {
         playerUnit = unit;
     }
-    void OnFinshiedLoading(Scene scene,LoadSceneMode mode) {
+    void OnFinshiedLoading(Scene scene, LoadSceneMode mode) {
         if (scene.buildIndex == 2) {
             player = PlayerMon.GetPlayer();
-            player.Unit = playerUnit;
+            player.UnitObj = playerUnit;
         }
     }
     public static void LoadScene(int level) {
