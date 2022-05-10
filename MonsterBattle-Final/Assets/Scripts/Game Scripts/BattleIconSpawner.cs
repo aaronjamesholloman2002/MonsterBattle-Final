@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BattleIconSpawner : MonoBehaviour
 {
+	
     private Coroutine spawn;
     [SerializeField] GameObject[] icons;
     // Start is called before the first frame update
@@ -17,14 +18,18 @@ public class BattleIconSpawner : MonoBehaviour
         
     }
     IEnumerator WaitToSpawn() {
-        YieldInstruction wait = new WaitForSeconds(1f);
+		
+        YieldInstruction wait = new WaitForSeconds(0.4f);
         while (isActiveAndEnabled) {
             yield return wait;
             SpawnIcon();
         }
     }
+	
     void SpawnIcon() {
         int rand = Random.Range(0, 3);
-        Instantiate(icons[rand], transform);
-    }
+		int hors = Random.Range(-400, 400);
+        GameObject bubble = Instantiate(icons[rand], transform);
+		LeanTween.moveX(bubble.GetComponent<RectTransform>(), hors, 0.0f);
+	}
 }

@@ -47,7 +47,7 @@ public class BattleManager : MonoBehaviour
         enemyAttacked = false;
         gatherMode.SetActive(true);
         timer.SetActive(true);
-        buttonMenu.SetActive(false);
+        //buttonMenu.SetActive(false);
         resetTimer.Invoke();
         StartCoroutine(waitTilBattlePhase());
     }
@@ -56,16 +56,16 @@ public class BattleManager : MonoBehaviour
         print("Start Attack phase");
         gatherMode.SetActive(false);
         timer.SetActive(false);
-        buttonMenu.SetActive(true);
+        //buttonMenu.SetActive(true);
         if (player.Unit.Speed > boss.unit.Speed) {
-            StartCoroutine(playerAttack(3));
-            StartCoroutine(enemyAttack(8));
+            StartCoroutine(playerAttack(1));
+            StartCoroutine(enemyAttack(1));
         }
         else {
-            StartCoroutine(enemyAttack(3));
-            StartCoroutine(playerAttack(8));
+            StartCoroutine(enemyAttack(1));
+            StartCoroutine(playerAttack(1));
         }
-        //Repeat();
+        Repeat();
     }
     //determine whether to repeat or switch to win state or
     //lose

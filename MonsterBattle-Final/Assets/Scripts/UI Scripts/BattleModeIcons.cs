@@ -10,6 +10,7 @@ public class BattleModeIcons : MonoBehaviour
     [SerializeField] Vector2 direction;
     [SerializeField] float speed;
     [SerializeField] GameObject effect;
+	[SerializeField] Text title;
     Button button;
     PlayerMon player;
     Rigidbody2D rbody;
@@ -17,7 +18,6 @@ public class BattleModeIcons : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        print("SPawned");
         player = PlayerMon.GetPlayer();
         button = GetComponent<Button>();
         rbody = GetComponent<Rigidbody2D>();

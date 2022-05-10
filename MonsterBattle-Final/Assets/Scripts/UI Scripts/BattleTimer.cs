@@ -22,13 +22,14 @@ public class BattleTimer : MonoBehaviour
             StopCoroutine(timer);
     }
     IEnumerator TickTimer() {
+		int countTime = time;
         YieldInstruction wait = new WaitForSeconds(1);
         while (isActiveAndEnabled) {
             yield return wait;
 
-            time--;
-            text.text = "Battle Timer: " + time.ToString();
-
+            countTime--;
+            text.text = "Battle Timer: " + countTime.ToString();
         }
+		countTime = time;
     }
 }

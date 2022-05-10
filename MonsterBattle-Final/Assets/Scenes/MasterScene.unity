@@ -1443,14 +1443,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Use attacks to defeat the enemy.
+  m_Text: 'Collect the bubbles to attack the enemy.
 
 
-    You lose when HP drops to 0.
+    You lose when HP drops
+    to 0.
 
 
-    Use
-    items to heal your monster.'
+    Kill them before they kill you.'
 --- !u!222 &618444814
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1641,6 +1641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 55133854}
+  unit: {fileID: 0}
 --- !u!1 &807008813
 GameObject:
   m_ObjectHideFlags: 0
